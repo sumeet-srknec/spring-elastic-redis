@@ -10,6 +10,9 @@ public class TodoElasticSearch {
     private String title;
     private String description;
     private boolean completed;
+
+    public TodoElasticSearch() {
+    }
     public String getId() {
         return id;
     }
