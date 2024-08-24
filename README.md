@@ -1,0 +1,1 @@
+This repo will host an experimental spring-boot app that interacts with oracle, elasticsearch, redis cache & queue
