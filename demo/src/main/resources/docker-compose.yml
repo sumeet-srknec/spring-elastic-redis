@@ -1,0 +1,22 @@
+version: '3.7'
+services:
+  oracle-db:
+    image: oracleinanutshell/oracle-xe-11g
+    ports:
+      - "1521:1521"
+    environment:
+      - ORACLE_ALLOW_REMOTE=true
+      - ORACLE_PASSWORD=oraclepassword
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.0
+    environment:
+      - discovery.type=single-node
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
