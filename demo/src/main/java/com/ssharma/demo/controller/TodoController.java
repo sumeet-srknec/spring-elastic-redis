@@ -38,8 +38,13 @@ public class TodoController {
         t = todoService.createTodo(t);
         return t.toString();
     }
-    
 
+    @GetMapping("/search/all")
+    public Iterable<TodoElasticSearch> searchAllTodoInElastic(@RequestParam String param) {
+        return todoService.searchTodoInElasticsearch();
+    }
+    
+    
     @GetMapping("/search/{id}")
     public Optional<TodoElasticSearch> searchTodoInElasticsearch(@PathVariable String id) {
         return todoService.searchTodoInElasticsearch(id);

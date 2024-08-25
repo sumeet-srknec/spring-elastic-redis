@@ -1,5 +1,6 @@
 package com.ssharma.demo.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +51,10 @@ public class TodoService {
 
     public Optional<TodoElasticSearch> searchTodoInElasticsearch(String id) {
         return todoElasticsearchRepository.findById(id);
+    }
+
+    public Iterable<TodoElasticSearch> searchTodoInElasticsearch() {
+        return todoElasticsearchRepository.findAll();
     }
 
     public TodoEntity getTodoFromCache(Long id) {
