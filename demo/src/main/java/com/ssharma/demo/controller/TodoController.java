@@ -13,11 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ssharma.demo.TodoElasticSearch;
 import com.ssharma.demo.TodoEntity;
 import com.ssharma.demo.service.TodoService;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 @RestController
-@RequestMapping("/todos")
+@RequestMapping("/api/todos")
 public class TodoController {
 
     @Autowired
@@ -27,20 +26,9 @@ public class TodoController {
     public TodoEntity createTodo(@RequestBody TodoEntity todoEntity) {
         return todoService.createTodo(todoEntity);
     }
-
-    @GetMapping("/addtodo")
-    public String createTodo(@RequestParam String title, @RequestParam String desc) {
-        TodoEntity t = new TodoEntity();
-        t.setTitle(title);
-        t.setDescription(desc);
-        t.setCompleted(false);
-
-        t = todoService.createTodo(t);
-        return t.toString();
-    }
-
+    
     @GetMapping("/search/all")
-    public Iterable<TodoElasticSearch> searchAllTodoInElastic(@RequestParam String param) {
+    public Iterable<TodoElasticSearch> searchAllTodoInElastic() {
         return todoService.searchTodoInElasticsearch();
     }
     

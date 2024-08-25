@@ -33,3 +33,7 @@ build/
 .vscode/
 
 *.mv.db
+
+logs
+.vscode/
+data/
