@@ -26,4 +26,4 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/workflows/actions
       - name: Run Maven Build Command
-        run: mvn clean install -DskipTests
+        run: cd demo ; mvn clean install -DskipTests
