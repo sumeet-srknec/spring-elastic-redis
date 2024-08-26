@@ -30,7 +30,7 @@ jobs:
       - name: Run Maven Build Command
         run: cd demo ; mvn clean install -DskipTests
       - name: Run Maven Checkstyle
-        run: mvn checkstyle:checkstyle -pl demo -am
+        run: cd demo ; mvn checkstyle:checkstyle
       - uses: jwgmeligmeyling/checkstyle-github-action@master
         with:
           path: '**/checkstyle-result.xml'
