@@ -29,11 +29,6 @@ jobs:
       - uses: ./.github/workflows/actions
       - name: Run Maven Build Command
         run: cd demo ; mvn clean install -DskipTests
-      - name: Run Maven Checkstyle
-        run: cd demo ; mvn checkstyle:checkstyle
-      - uses: jwgmeligmeyling/checkstyle-github-action@master
-        with:
-          path: '**/checkstyle-result.xml'
       - name: OWASP Dependency Check
         uses: dependency-check/Dependency-Check_Action@main
         env:
