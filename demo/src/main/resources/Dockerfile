@@ -12,7 +12,7 @@ COPY wait-for-it.sh wait-for-it.sh
 RUN chmod +x wait-for-it.sh
 
 # Copy the project jar file to the container
-COPY demo-0.0.1-SNAPSHOT.jar app.jar
+COPY demo*.jar app.jar
 
 # Expose the port that the application will run on
 EXPOSE 8080
